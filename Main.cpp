@@ -107,7 +107,7 @@ int main() {
         cout << "4. Exit" << endl;
         cout << "Enter your choice: ";
 
-        choice = getIntegerInput(); //this will be the users choice
+        choice = getIntegerInput(); // <--users choice
 
         switch(choice) {
             case 1:
@@ -126,7 +126,7 @@ int main() {
                 cout << "Invalid choice. Please try again." << endl;
                 break;
         }
-    } while (choice != 4); // The loop only stops when the user enters 4.
+    } while (choice != 4); 
 
     return 0;
 }
@@ -138,8 +138,8 @@ int getIntegerInput() {
     // Check if the user entered something that isn't a number.
     while (cin.fail()) {
         cout << "Invalid input. Please enter a number: ";
-        cin.clear(); // Clear the error flag.
-        // Discard the rest of the line to avoid an infinite loop.
+        cin.clear(); // Clears the error flag.
+        // Discard the rest of the line to avoid an infinite loop .
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cin >> choice;
     }
@@ -177,16 +177,15 @@ vector<Product> readProductsFromFile() {
         vector<string> words;
         string word;
 
-        // 1. Read all the "words" from the line into a vector.
-        // Example: "Carrot Cake Slice 3.50 15" -> {"Carrot", "Cake", "Slice", "3.50", "15"}
+        //  Read all the "words" from the line into a vector.
         while (ss >> word) {
             words.push_back(word);
         }
-            if (words.size() < 3) continue; // Skip malformed lines
+            if (words.size() < 3) continue; // Skip lines that isn't writtern properly :)
         Product p;
         
         // 2. The last word is the stock.
-        // We use stod/stoi to convert string to double/int.
+        // stod/stoi is used to convert string to double/int.
         p.stock = stoi(words.back());
         words.pop_back(); // Remove it from the vector
 
@@ -574,7 +573,7 @@ void purchase(Cart& cart) {
             }
         }
 
-        writeProductsToFile(products); // Save the updated stock levels
+        writeProductsToFile(products); // saving the updated stock levels
 
         cout << "\nThank you for your purchase! Your order is confirmed." << endl;
     } else {
