@@ -1,0 +1,5 @@
+Sourdough Loaf 4.5 15
+Chocolate Croissant 2.75 35
+Blueberry Muffin 2.25 40
+Carrot Cake Slice 3.5 15
+Cup Cake 12.96 123

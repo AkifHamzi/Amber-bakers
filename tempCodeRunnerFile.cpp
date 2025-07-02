@@ -1,0 +1,1 @@
+  // Clear the cart after purchase
